@@ -1,0 +1,7 @@
+fastapi==0.142.1
+uvicorn==0.54.0
+numpy==2.2.6
+scipy==1.15.3
+python-multipart==0.0.32
+onnx==1.23.1
+onnxruntime==1.23.2

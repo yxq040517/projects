@@ -1,0 +1,77 @@
+{
+  "project": "PulseLab · 心电智能分析工作站 2.0",
+  "goal": "Reduce explanatory text on workspace and add genuinely useful waveform tools: multilead overview and real lead reanalysis, original-sample segment analysis/save, beat templates and spectral/RR plots, side-by-side comparison, manual beat/record review. Preserve user's existing records and notes. Local-only DSP research, not trained diagnosis.",
+  "ownership": {
+    "Main": "backend/server.py, persistence/original migration, API, report/CSV export, all validation/startup",
+    "EngineTools": "backend/ecg.py, tests/test_ecg.py",
+    "WorkbenchUpgrade": "web/index.html, web/app.js, web/style.css"
+  },
+  "existing_contract": "parse_upload(bytes, filename, sample_rate, units) returns {sample_rate,units:'mV',leads:{name:list[float]},warnings}. analyze_signal(leads,sample_rate,selected_lead,notch=50) signature unchanged. Existing keys selected_lead,sample_rate,duration,lead_names,units,metrics,quality,findings,peaks,rr,waveform remain. metrics heart_rate/min/max/beat_count/mean_rr/sdnn/rmssd/pnn50/rr_cv remain null-safe. waveform time/raw/filtered/leads is display-only extrema-preserving decimation, NOT original samples. Existing API endpoints remain functional. Limit 100..1000Hz,5..300s,12leads,20MB upload. Methods text/disclaimer accurate, no disease classifiers or diagnosis/confidence scores.",
+  "engine_upgrade": {
+    "rule": "Compute tools inside analyze_signal from already-available full-resolution raw,filtered,indices,intervals,reliable. Do NOT filter/detect twice or derive tools from display-decimated waveform. Keep signature. Additional rr[].peak_index=int full-resolution index of second peak, useful manual review. New top-level tools output as below.",
+    "tools": {
+      "template": {
+        "time_ms": [-200, -197, 400],
+        "median": [0.1, 0.2, 0.1],
+        "p25": [0.1, 0.2, 0.1],
+        "p75": [0.1, 0.2, 0.1],
+        "traces": [[0.1, 0.2, 0.1]],
+        "peak_times": [0.7],
+        "available_count": 71,
+        "used_count": 71,
+        "reliable": true,
+        "reason": ""
+      },
+      "spectrum": {
+        "frequency_hz": [0, 1],
+        "raw_power": [0.1, 0.2],
+        "filtered_power": [0.1, 0.2]
+      },
+      "rr_histogram": { "edges_ms": [700, 750, 800], "counts": [1, 4] },
+      "poincare": { "x_ms": [800, 810], "y_ms": [810, 820] }
+    },
+    "template_details": "201 common points from -200..400ms around full-res peaks, linear interpolation for display, subtract median local pre-QRS baseline only (NO amplitude normalization). Whole window must lie within source. At most200 valid beats uniformly sampled across record for median/p25/p75; traces<=30 sampled from those for drawing. peak_times one per displayed trace. used_count statistical beats vs available_count full valid beats. Require reliable signal and >=3 complete windows else arrays empty and Chinese reason; do not publish untrustworthy normal-template claims. Template is descriptive, no QRS duration or P/QT/AF assertions.",
+    "spectral_details": "Welch PSD of actual raw and filtered selected lead, finite powers incl0, shared frequency_hz up to min(100,Nyquist),<=512 points. Units mV^2/Hz; UI can use log scale with explicit label, no fake frequencies. Histogram only plausible300..2000ms RR, equal-width10 bins, meaningful constant interval range. Poincare uses only successive plausible RR pairs; never bridge rejected gaps. Empty arrays for insufficient/unreliable RR. New tests defend original-resolution template, inverted morphology, boundary windows, unreliable suppression and RR pair gap invariants; preserve meaningful old tests."
+  },
+  "record_upgrade": {
+    "new_fields": {
+      "schema_version": 2,
+      "has_original": true,
+      "review_status": "unreviewed",
+      "beat_reviews": [
+        {
+          "lead": "II",
+          "index": 175,
+          "time": 0.7,
+          "status": "confirmed",
+          "note": "",
+          "updated_at": "ISO"
+        }
+      ],
+      "segment": null,
+      "source_offset": 0
+    },
+    "persistence": "Main stores original full-resolution mV signals independently in SQLite original_signals table, compressed NumPy NPZ with allow_pickle=False. Existing public demos recovered only from matching source/catalog metadata and cached original CSV, verified against stored display samples. Never invent full-resolution samples from decimated waveform; unsupported legacy uploads has_original=false and actionable409. Schema migration backs up existing DB and preserves IDs,names,notes,created_at. Reanalysis updates same record; preserve original and lead-keyed beat reviews; review_status reset to in_progress if analysis changes. Record status manual, not medical clearance.",
+    "summaries": "Existing metadata summaries plus has_original,review_status,segment,source_offset and reviewed beat counts as needed. Full record includes tools and beat_reviews. No original full arrays in GET record."
+  },
+  "api_upgrade": {
+    "POST /api/records/{id}/reanalyze": "JSON {lead:str,notch?:0|50|60}; exact full-resolution original signals; return updated same-ID full record with tools. UI apply-analysis-lead button distinct from lead-view dropdown; loading, error and original-unavailable guards.",
+    "POST /api/records/{id}/segment": "JSON {start:float,end:float,lead?:str,save:bool=false,name?:str<=80}. Times seconds relative to parent, round to nearest sample boundaries, validate within source and >=5s. Analyze real crop of ALL original leads. Return full record-shaped result, id=null for preview, new ID if save=true; add segment{parent_id,start,end} and source_offset inherited +start. Preview does not change parent or library; save becomes independent record with own original crop. Preview plots relative0..duration with source range label. Parent deletion does not invalidate saved crop.",
+    "PATCH /api/records/{id}/review": "JSON {status:'unreviewed'|'in_progress'|'reviewed'}; return updated full record.",
+    "PUT /api/records/{id}/beats/{index}": "JSON {status:'confirmed'|'artifact'|'uncertain',note?:str<=300}; index must be actual detected peak index on CURRENT analysis lead. Persist lead/index/time/review and set in_progress unless already manual reviewed. Return full record. Mark does not change algorithm metrics.",
+    "DELETE /api/records/{id}/beats/{index}": "Clear current-analysis-lead review for exact peak index, return full record. Preserve other leads' marks.",
+    "GET /api/compare?left={id}&right={id}": "Require two distinct records. {left:full record,right:full record,same_lead:bool,differences:[{key,label,unit,left:number|null,right:number|null,delta:number|null}]}. Delta=right-left only when both finite. Contrast rate/RR/SDRR/RMSSD/pRR50/quality, no health improvement conclusions, no assumption same patient. Time aligned by record start, not acquisition timestamp.",
+    "GET /api/records/{id}/signal.csv": "Download true full-resolution original mV waveform with time_s and all leads; streaming response, not decimated view. Unicode lead names; guard spreadsheet-formula headers. Missing original409. Existing /export downloads analysis JSON (not original).",
+    "existing": "GET/POST health/stats/demos/analyze/records and PATCH name/note, DELETE record, report, export, template.csv remain. Report include manual review status/count/marks and segment parent/range; original data never public static. Chinese human-readable error detail. Local origin mutation checks unchanged."
+  },
+  "frontend_upgrade": {
+    "design": "Keep existing refined navy/teal visual style and compact operational pages. Navigation contains workspace, history, comparison and model management; no training or standalone methods page. No standalone research disclaimer, privacy footnote, sidebar fine print or decorative footer. Model setup help stays in its on-demand protocol dialog; scientific explanations remain in printable reports and folded record/quality details. Workstation prioritizes charts and actions; warnings expandable, routine info collapsed; source/notes discoverable but not verbose. No external/CDN assets.",
+    "workspace": "Tabs or view switch single/multilead: synchronized small Canvas traces for all leads with clear labels and selected analysis badge; clicking other lead sets viewing selection, separate '分析此导联' POST reanalyze to use actual originals. Existing raw/filtered,time windows,pan,markers remain. Multi view must follow shared time window and no claim other leads filtered if raw. Add '选段分析' dialog start/end default current window, lead selection, analyze preview KPI+waveform/template, save independent record. Show precise source range and original-availability message.",
+    "advanced_tools": "Compact chart tabs beneath ECG: 'RR分析' (trend + histogram/Poincare actual RR), '心搏模板' (traces translucent, median prominent, percentile band, used/available count, empty reason; amplitude mV vs time ms), '频谱' (raw/filtered PSD with Hz and explicit log scale). All Canvas DPR/ResizeObserver robust. No hardcoded results or medical diagnoses.",
+    "manual_review": "Record status control unreviewed/in_progress/reviewed PATCH, history filter status, useful selected-lead RR rows with peak_index and manual mark buttons/selector plus optional note dialog. Full peak mark list or candidate table optional; keep existing click row locate. Legend clear confirmed/artefact/uncertain, marks tied lead. Clearing mark works. Must not silently alter metrics on manual marks.",
+    "comparison": "New navigation '记录对比' page selecting two local records, allow preselect from history action '加入对比' if useful but actual flow required. Fetch /api/compare and display side-by-side waveform Canvas (relative time, lead label, different lead warning) and metrics/delta table, quality/review/source context concise. No same-patient or clinical-improvement assumptions. Window and raw/filtered controls useful; empty state <2 records with demo load route. Distinct record selection validation.",
+    "exports": "Existing report/JSON actions plus original CSV download if has_original. Provide source/segment/manual status in reports through Main API, UI no fake PDF generation.",
+    "robustness": "All primary controls actual API, wait/loading/errors, native dialog keyboard accessibility, textContent/DOM user text (no unsanitized innerHTML), 1440 and390 responsive. Preserve stable existing selectors if possible. Record status/compare lists refresh after saves/deletes/reanalysis, reset advanced charts when record changes, normalize missing legacy tools. Detect version health2.0 for improved API but no unnecessary fallback mocks."
+  },
+  "model_integration_contract": "model-contract.json"
+}

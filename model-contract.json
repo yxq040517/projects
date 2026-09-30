@@ -1,0 +1,116 @@
+{
+  "version": "2.1.0",
+  "goal": "External training -> user imports an ONNX model + configuration -> chooses default/per-record model -> runs real CPU inference on original ECG -> stores model-version-specific results separate from DSP and manual review. No in-platform training page and no installed pretend/pretrained model. Respect user's removed disclaimer/footer/methodology UI: do not reintroduce decorative text.",
+  "ownership": {
+    "Main": "backend/model_registry.py, backend/server.py API wiring, reporting integration, dependencies, tests/test_model_workflows.py and all validation",
+    "ModelEngine": "backend/model_runtime.py and tests/test_model_runtime.py",
+    "ModelUI": "web/index.html, web/app.js, web/style.css"
+  },
+  "manifest": {
+    "schema_version": 1,
+    "name": "MIT-BIH 心搏分类",
+    "version": "1.0",
+    "task": "beat_classification",
+    "classes": ["N", "S", "V", "F", "Q"],
+    "sample_rate": 360,
+    "input_samples": 256,
+    "lead_names": ["MLII"],
+    "pre_samples": 90,
+    "normalization": "none",
+    "input_filter": "raw",
+    "notch": 0,
+    "output_type": "logits",
+    "threshold": 0.5,
+    "description": ""
+  },
+  "manifest_rules": "schema_version=1; name1..80,version1..32,description<=1000; task beat_classification|record_classification|record_multilabel; classes2..64 unique nonempty strings<=80 preserving order; sample_rate100..1000 finite; input_samples64..20000 int; lead_names1..12 unique names<=80, ['selected'] allowed only sole lead and resolves current ANALYSIS lead (not view dropdown). pre_samples required int0<pre<input_samples for beats, optional/null for record tasks. normalization none|zscore|minmax per channel/window with epsilon1e-6; input_filter raw|bandpass; notch0|50|60 and must0 if raw; output_type logits|probabilities; threshold finite0<threshold<1 used multilabel. Reject extra configuration keys. Training must use EXACT declared resampling/filtering/window/normalization/class-order contract; import proves runtime compatibility, not predictive accuracy.",
+  "source_filter_constraint": "When input_filter=bandpass, requested nonzero notch must be below HALF THE ORIGINAL SOURCE sampling rate, not target rate. Incompatible source rates block compatibility and inference rather than silently skipping a declared training preprocessing operation.",
+  "engine_exports": {
+    "validate_model(content:bytes, metadata:dict)": "-> tuple[normalized_manifest:dict,session:onnxruntime.InferenceSession,signature:dict]. ValueError Chinese message for malformed/incompatible. Parse onnx protobuf from bytes; refuse external tensor data recursively incl constants/subgraphs before checker/session, refuse nonstandard domains (allowed '',ai.onnx,ai.onnx.ml), no pickle/Torch checkpoint loading or external file access. onnx checker; ORT CPUExecutionProvider, <=4 intra-op threads. Exactly one tensor(float) input and one float output. Input rank2 [B,N] only1lead or rank3 [B,C,N]; fixed dims must agree manifest, batch dynamic or fixed1 only. Output rank2[B,K], K=classes length. Dry run zeros B1 (B2 also when dynamic) verify finite output and probability contract when configured. Signature {input_name,output_name,input_shape,output_shape,layout:'NL'|'NCL',dynamic_batch:bool,runtime_version,provider:'CPUExecutionProvider'}. No health confidence/accuracy fields.",
+    "compatibility(manifest:dict,record:dict)": "->tuple[bool,reason:str]. Check has_original, ordered required lead availability; ['selected'] resolves record.selected_lead. Beat tasks require reliable detection and >=1 peak; record tasks require >=input_samples/sample_rate seconds. Return actionable reason, not diagnosis.",
+    "predict(session,manifest:dict,signature:dict,record:dict,original:dict,start:float=0)": "-> result below, no persistence/API. Original {sample_rate,leads:{name:np.ndarray},units:mV}. Use full source arrays only. Resolve ordered channels; optional existing ecg._filter_waveform once per source channel for bandpass; resample_poly per source channel using Fraction(target/source).limit_denominator(10000) (reuse when same fs). Extract beats around actual record.peaks[].index converted by original fs -> target fs, pre_samples before R; complete windows only, skip boundaries WITHOUT padding. Reject unreliable/no valid beat windows. Record tasks analyze one fixed window at nearest target sample to start; reject short/outside rather than pad. Normalize each channel/window exactly. Contiguousfloat32 input, batch<=32 when dynamic and1 otherwise. Run real session.run; validate every batch row/outputK/finiteness, softmax logits for single-label or expit logits for multilabel; probabilities must within0..1 and single-label sum1 within1e-3, never invent/renormalize malformed predictions. Preserve original peak index/time and real source window bounds. output labels/score for single-label are argmax actual scores, labels for multilabel >=threshold; no claim score clinically calibrated.",
+    "result": {
+      "task": "beat_classification",
+      "input_leads": ["MLII"],
+      "predictions": [
+        {
+          "index": 370,
+          "time": 1.027778,
+          "start": 0.777778,
+          "end": 1.488889,
+          "class_index": 0,
+          "class_label": "N",
+          "score": 0.8,
+          "scores": [0.8, 0.05, 0.05, 0.05, 0.05],
+          "labels": ["N"]
+        }
+      ],
+      "summary": {
+        "evaluated": 74,
+        "skipped": 1,
+        "counts": [{ "label": "N", "count": 74 }]
+      },
+      "elapsed_ms": 15.2,
+      "preprocessing": {
+        "source_sample_rate": 360,
+        "sample_rate": 360,
+        "resample_up": 1,
+        "resample_down": 1,
+        "normalization": "none",
+        "input_filter": "raw",
+        "notch": 0,
+        "input_samples": 256,
+        "pre_samples": 90
+      },
+      "warnings": []
+    },
+    "record_result_note": "record task predictions list length1; index:null,time=actual start,start/end exact fixed window. For multilabel class_index:null,class_label=joined selected labels or '未超过阈值',score=max actual scores,scores full ordered list,labels selected labels. counts include all manifest classes incl0. elapsed_ms actual perf_counter. Boundary skipped and configuration/operator errors explicit. Use lightweight private helpers, avoid repeated filters or per-prediction resampling."
+  },
+  "storage": "Main creates models(id,name,version,metadataJSON,signatureJSON,onnxBLOB,sha256,filename,size_bytes,imported_at) UNIQUE(name,version), settings(default_model_id), model_predictions(id,record_id FK cascade,model_id text WITHOUT FK deletion cascade,created_at,payload compressedJSON). Preserve all current records/notes. Model config immutable; PATCH only name/description. First imported model default automatically; explicit default action; deleting default clears default without silently selecting another. Prediction snapshots preserve manifest/version/SHA even after model deletion. Bound session cache<=2, reuse validated import session. Import limit100MB model +512KB manifest; safe filename stored only, never static model/patient files. Duplicate name/version409.",
+  "api": {
+    "GET /api/models": "{models:[flat normalized manifest fields +id,signature,is_default,sha256,filename,size_bytes,imported_at],default_model_id:str|null}; no nested metadata/manifest aliases",
+    "POST /api/models/import": "multipart file (.onnx), config JSON string. Return imported model metadata+signature+is_default; malformed400/422,too large413,duplicate409. config_file optional frontend reads JSON locally and submits config string. Main validates import using engine.",
+    "GET /api/models/{id}": "model metadata+signature+is_default",
+    "PATCH /api/models/{id}": "JSON {name?:str<=80,description?:str<=1000}; no config changes; duplicate name/version409",
+    "POST /api/models/{id}/default": "return {default_model_id:id}",
+    "DELETE /api/models/{id}": "{ok:true,default_model_id:str|null}; cached session evicted; historical prediction audit retained",
+    "GET /api/models/{id}/manifest": "download normalized config JSON only (never contains model weights)",
+    "GET /api/models/template": "download example manifest above. Route before /{id}. Example config only, not a fake trained model.",
+    "GET /api/records/{id}/models": "{models:[metadata+signature+is_default+compatible:bool+reason:str],default_model_id:str|null}",
+    "POST /api/records/{id}/predict": "JSON {model_id:str,start:float>=0=0}. Request original signal, real ONNX runtime, store result, return prediction below. start used record tasks; beats whole record no arbitrary clipping. ValueError400/422,missing originals409,model/record404. Run off event loop synchronous FastAPI endpoint.",
+    "GET /api/records/{id}/predictions": "query model_id optional; {predictions:[full prediction newest first,limit20]}. Each includes stale bool,stale_reason,model_available bool from current record context. Reanalysis selected_lead/notch/peak-index fingerprint changes makes old result stale; manual reviews/name edits do NOT make stale. New selected model loads its own results, never relabel old scores.",
+    "GET /api/predictions/{id}/export": "download full prediction JSON snapshot",
+    "prediction": {
+      "id": "uuid",
+      "record_id": "uuid",
+      "model_id": "uuid",
+      "created_at": "ISO",
+      "model": {
+        "name": "name",
+        "version": "1.0",
+        "sha256": "hash",
+        "manifest": {}
+      },
+      "record_context": {
+        "selected_lead": "MLII",
+        "notch": 50,
+        "sample_rate": 360,
+        "duration": 60,
+        "peaks_hash": "hash"
+      },
+      "task": "beat_classification",
+      "input_leads": ["MLII"],
+      "predictions": [],
+      "summary": {},
+      "elapsed_ms": 0,
+      "preprocessing": {},
+      "warnings": [],
+      "stale": false,
+      "stale_reason": "",
+      "model_available": true
+    },
+    "report": "Existing record report includes latest non-stale prediction by default. Optional ?prediction_id selects exact saved result and checks record ownership; explicitly selected stale results labeled historical. Render actual model/version/classes/scores/preprocessing/window separately from DSP/human review. No model/no valid prediction -> omit. Model deletion preserves snapshot export/report audit. Never invent accuracy.",
+    "health": "version2.1.0; existing api2 /^2/ remains valid. All old endpoints stay functional. Chinese detail strings, existing same-origin mutation checks preserved. Middleware raises request size only on exact /api/models/import, original ECG20MB limit unchanged."
+  },
+  "frontend": "Own index.html/app.js/style.css only. Add nav/page '模型管理' with real model list (name/version/task/classes/rate/shape/size/imported date/default), empty state import CTA, import native dialog file + JSON config optional plus form builder for name/version/task/classes ordered lines,fs,input samples,lead names ordered lines,pre samples,normalization,input filter/notch,output type,multilabel threshold,description. Load JSON into fields, validate friendly, submit actual config/file. Add model details/compact collapsible tensor+preprocessing config, rename/note, set default, confirmed delete, manifest/template download. No visible accuracy unless actually measured (none here). Export .pt/.pth unsupported message '请从训练框架导出ONNX'; support CPU runtime status not fake GPU. Workstation model select + run button + link to model management (empty model disabled, no fake prediction); use record-specific compatible list/default, never silently run a different model if default incompatible. start field for record tasks and model-required window duration, beats whole record. Results separate panel class-count bars + prediction tabletime/class/score/full class scores on expandable detail + model version/input leads/execution time; overlay class labels on ECG only nonstale beats and same analysis/view lead, optional toggle, click row locates wave using existing functions. Single-record/multilabel show actual ordered scores and threshold labels. Selected model change fetch its latest result; async token guards record/model switching; stale results shown as expired with run CTA, not overlaid as current; model deleted audit clearly marked. Stored predictions returned no dummy placeholder charts. Manual marks remain independent and unchanged. Keep user-removed small print/footers/method page removed; required configuration help behind '接入规范' dialog and example manifest download. Refresh lists/default/compatibility after imports/edits/deletion, prevent stale selector IDs. All real API, loading/errors/empty, accessible dialogs, safe textContent/DOM, responsive1440/390, noCDN. Preserve existing selectors/capabilities."
+}

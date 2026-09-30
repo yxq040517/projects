@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "name": "MIT-BIH 心搏分类",
+  "version": "1.0",
+  "task": "beat_classification",
+  "classes": [
+    "N",
+    "S",
+    "V",
+    "F",
+    "Q"
+  ],
+  "sample_rate": 360,
+  "input_samples": 256,
+  "lead_names": [
+    "MLII"
+  ],
+  "pre_samples": 90,
+  "normalization": "none",
+  "input_filter": "raw",
+  "notch": 0,
+  "output_type": "logits",
+  "threshold": 0.5,
+  "description": ""
+}

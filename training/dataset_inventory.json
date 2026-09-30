@@ -1,0 +1,2067 @@
+{
+  "dataset_path": "F:\\project\\心电智能分析\\mit-bih-arrhythmia-database\\mit-bih-arrhythmia-database-1.0.0",
+  "records": [
+    {
+      "record": "100",
+      "subject_group": "100",
+      "sample_rate": 360,
+      "samples": 650000,
+      "lead_names": [
+        "MLII",
+        "V5"
+      ],
+      "selected_lead": "MLII",
+      "units": [
+        "mV",
+        "mV"
+      ],
+      "annotation_symbols": {
+        "+": 1,
+        "N": 2239,
+        "A": 33,
+        "V": 1
+      },
+      "class_counts": {
+        "N": 2239,
+        "S": 33,
+        "V": 1,
+        "F": 0,
+        "Q": 0
+      }
+    },
+    {
+      "record": "101",
+      "subject_group": "101",
+      "sample_rate": 360,
+      "samples": 650000,
+      "lead_names": [
+        "MLII",
+        "V1"
+      ],
+      "selected_lead": "MLII",
+      "units": [
+        "mV",
+        "mV"
+      ],
+      "annotation_symbols": {
+        "+": 1,
+        "N": 1860,
+        "~": 4,
+        "|": 4,
+        "Q": 2,
+        "A": 3
+      },
+      "class_counts": {
+        "N": 1860,
+        "S": 3,
+        "V": 0,
+        "F": 0,
+        "Q": 2
+      }
+    },
+    {
+      "record": "102",
+      "subject_group": "102",
+      "sample_rate": 360,
+      "samples": 650000,
+      "lead_names": [
+        "V5",
+        "V2"
+      ],
+      "selected_lead": "V5",
+      "units": [
+        "mV",
+        "mV"
+      ],
+      "annotation_symbols": {
+        "+": 5,
+        "/": 2028,
+        "f": 56,
+        "N": 99,
+        "V": 4
+      },
+      "class_counts": {
+        "N": 99,
+        "S": 0,
+        "V": 4,
+        "F": 0,
+        "Q": 2084
+      }
+    },
+    {
+      "record": "103",
+      "subject_group": "103",
+      "sample_rate": 360,
+      "samples": 650000,
+      "lead_names": [
+        "MLII",
+        "V2"
+      ],
+      "selected_lead": "MLII",
+      "units": [
+        "mV",
+        "mV"
+      ],
+      "annotation_symbols": {
+        "+": 1,
+        "N": 2082,
+        "~": 6,
+        "A": 2
+      },
+      "class_counts": {
+        "N": 2082,
+        "S": 2,
+        "V": 0,
+        "F": 0,
+        "Q": 0
+      }
+    },
+    {
+      "record": "104",
+      "subject_group": "104",
+      "sample_rate": 360,
+      "samples": 650000,
+      "lead_names": [
+        "V5",
+        "V2"
+      ],
+      "selected_lead": "V5",
+      "units": [
+        "mV",
+        "mV"
+      ],
+      "annotation_symbols": {
+        "+": 45,
+        "/": 1380,
+        "f": 666,
+        "~": 37,
+        "Q": 18,
+        "N": 163,
+        "V": 2
+      },
+      "class_counts": {
+        "N": 163,
+        "S": 0,
+        "V": 2,
+        "F": 0,
+        "Q": 2064
+      }
+    },
+    {
+      "record": "105",
+      "subject_group": "105",
+      "sample_rate": 360,
+      "samples": 650000,
+      "lead_names": [
+        "MLII",
+        "V1"
+      ],
+      "selected_lead": "MLII",
+      "units": [
+        "mV",
+        "mV"
+      ],
+      "annotation_symbols": {
+        "+": 1,
+        "N": 2526,
+        "V": 41,
+        "~": 88,
+        "|": 30,
+        "Q": 5
+      },
+      "class_counts": {
+        "N": 2526,
+        "S": 0,
+        "V": 41,
+        "F": 0,
+        "Q": 5
+      }
+    },
+    {
+      "record": "106",
+      "subject_group": "106",
+      "sample_rate": 360,
+      "samples": 650000,
+      "lead_names": [
+        "MLII",
+        "V1"
+      ],
+      "selected_lead": "MLII",
+      "units": [
+        "mV",
+        "mV"
+      ],
+      "annotation_symbols": {
+        "~": 30,
+        "+": 41,
+        "N": 1507,
+        "V": 520
+      },
+      "class_counts": {
+        "N": 1507,
+        "S": 0,
+        "V": 520,
+        "F": 0,
+        "Q": 0
+      }
+    },
+    {
+      "record": "107",
+      "subject_group": "107",
+      "sample_rate": 360,
+      "samples": 650000,
+      "lead_names": [
+        "MLII",
+        "V1"
+      ],
+      "selected_lead": "MLII",
+      "units": [
+        "mV",
+        "mV"
+      ],
+      "annotation_symbols": {
+        "+": 1,
+        "/": 2078,
+        "V": 59,
+        "~": 2
+      },
+      "class_counts": {
+        "N": 0,
+        "S": 0,
+        "V": 59,
+        "F": 0,
+        "Q": 2078
+      }
+    },
+    {
+      "record": "108",
+      "subject_group": "108",
+      "sample_rate": 360,
+      "samples": 650000,
+      "lead_names": [
+        "MLII",
+        "V1"
+      ],
+      "selected_lead": "MLII",
+      "units": [
+        "mV",
+        "mV"
+      ],
+      "annotation_symbols": {
+        "+": 1,
+        "N": 1739,
+        "V": 17,
+        "x": 11,
+        "~": 41,
+        "|": 8,
+        "F": 2,
+        "A": 4,
+        "j": 1
+      },
+      "class_counts": {
+        "N": 1740,
+        "S": 4,
+        "V": 17,
+        "F": 2,
+        "Q": 0
+      }
+    },
+    {
+      "record": "109",
+      "subject_group": "109",
+      "sample_rate": 360,
+      "samples": 650000,
+      "lead_names": [
+        "MLII",
+        "V1"
+      ],
+      "selected_lead": "MLII",
+      "units": [
+        "mV",
+        "mV"
+      ],
+      "annotation_symbols": {
+        "+": 1,
+        "L": 2492,
+        "F": 2,
+        "V": 38,
+        "~": 2
+      },
+      "class_counts": {
+        "N": 2492,
+        "S": 0,
+        "V": 38,
+        "F": 2,
+        "Q": 0
+      }
+    },
+    {
+      "record": "111",
+      "subject_group": "111",
+      "sample_rate": 360,
+      "samples": 650000,
+      "lead_names": [
+        "MLII",
+        "V1"
+      ],
+      "selected_lead": "MLII",
+      "units": [
+        "mV",
+        "mV"
+      ],
+      "annotation_symbols": {
+        "+": 1,
+        "L": 2123,
+        "~": 8,
+        "V": 1
+      },
+      "class_counts": {
+        "N": 2123,
+        "S": 0,
+        "V": 1,
+        "F": 0,
+        "Q": 0
+      }
+    },
+    {
+      "record": "112",
+      "subject_group": "112",
+      "sample_rate": 360,
+      "samples": 650000,
+      "lead_names": [
+        "MLII",
+        "V1"
+      ],
+      "selected_lead": "MLII",
+      "units": [
+        "mV",
+        "mV"
+      ],
+      "annotation_symbols": {
+        "+": 1,
+        "N": 2537,
+        "~": 10,
+        "A": 2
+      },
+      "class_counts": {
+        "N": 2537,
+        "S": 2,
+        "V": 0,
+        "F": 0,
+        "Q": 0
+      }
+    },
+    {
+      "record": "113",
+      "subject_group": "113",
+      "sample_rate": 360,
+      "samples": 650000,
+      "lead_names": [
+        "MLII",
+        "V1"
+      ],
+      "selected_lead": "MLII",
+      "units": [
+        "mV",
+        "mV"
+      ],
+      "annotation_symbols": {
+        "+": 1,
+        "N": 1789,
+        "a": 6
+      },
+      "class_counts": {
+        "N": 1789,
+        "S": 6,
+        "V": 0,
+        "F": 0,
+        "Q": 0
+      }
+    },
+    {
+      "record": "114",
+      "subject_group": "114",
+      "sample_rate": 360,
+      "samples": 650000,
+      "lead_names": [
+        "V5",
+        "MLII"
+      ],
+      "selected_lead": "MLII",
+      "units": [
+        "mV",
+        "mV"
+      ],
+      "annotation_symbols": {
+        "+": 3,
+        "N": 1820,
+        "V": 43,
+        "J": 2,
+        "F": 4,
+        "|": 1,
+        "~": 7,
+        "A": 10
+      },
+      "class_counts": {
+        "N": 1820,
+        "S": 12,
+        "V": 43,
+        "F": 4,
+        "Q": 0
+      }
+    },
+    {
+      "record": "115",
+      "subject_group": "115",
+      "sample_rate": 360,
+      "samples": 650000,
+      "lead_names": [
+        "MLII",
+        "V1"
+      ],
+      "selected_lead": "MLII",
+      "units": [
+        "mV",
+        "mV"
+      ],
+      "annotation_symbols": {
+        "+": 1,
+        "N": 1953,
+        "~": 2,
+        "|": 6
+      },
+      "class_counts": {
+        "N": 1953,
+        "S": 0,
+        "V": 0,
+        "F": 0,
+        "Q": 0
+      }
+    },
+    {
+      "record": "116",
+      "subject_group": "116",
+      "sample_rate": 360,
+      "samples": 650000,
+      "lead_names": [
+        "MLII",
+        "V1"
+      ],
+      "selected_lead": "MLII",
+      "units": [
+        "mV",
+        "mV"
+      ],
+      "annotation_symbols": {
+        "+": 1,
+        "N": 2302,
+        "V": 109,
+        "A": 1,
+        "~": 8
+      },
+      "class_counts": {
+        "N": 2302,
+        "S": 1,
+        "V": 109,
+        "F": 0,
+        "Q": 0
+      }
+    },
+    {
+      "record": "117",
+      "subject_group": "117",
+      "sample_rate": 360,
+      "samples": 650000,
+      "lead_names": [
+        "MLII",
+        "V2"
+      ],
+      "selected_lead": "MLII",
+      "units": [
+        "mV",
+        "mV"
+      ],
+      "annotation_symbols": {
+        "+": 1,
+        "N": 1534,
+        "~": 3,
+        "A": 1
+      },
+      "class_counts": {
+        "N": 1534,
+        "S": 1,
+        "V": 0,
+        "F": 0,
+        "Q": 0
+      }
+    },
+    {
+      "record": "118",
+      "subject_group": "118",
+      "sample_rate": 360,
+      "samples": 650000,
+      "lead_names": [
+        "MLII",
+        "V1"
+      ],
+      "selected_lead": "MLII",
+      "units": [
+        "mV",
+        "mV"
+      ],
+      "annotation_symbols": {
+        "+": 1,
+        "R": 2166,
+        "V": 16,
+        "A": 96,
+        "x": 10,
+        "~": 12
+      },
+      "class_counts": {
+        "N": 2166,
+        "S": 96,
+        "V": 16,
+        "F": 0,
+        "Q": 0
+      }
+    },
+    {
+      "record": "119",
+      "subject_group": "119",
+      "sample_rate": 360,
+      "samples": 650000,
+      "lead_names": [
+        "MLII",
+        "V1"
+      ],
+      "selected_lead": "MLII",
+      "units": [
+        "mV",
+        "mV"
+      ],
+      "annotation_symbols": {
+        "+": 103,
+        "N": 1543,
+        "V": 444,
+        "~": 4
+      },
+      "class_counts": {
+        "N": 1543,
+        "S": 0,
+        "V": 444,
+        "F": 0,
+        "Q": 0
+      }
+    },
+    {
+      "record": "121",
+      "subject_group": "121",
+      "sample_rate": 360,
+      "samples": 650000,
+      "lead_names": [
+        "MLII",
+        "V1"
+      ],
+      "selected_lead": "MLII",
+      "units": [
+        "mV",
+        "mV"
+      ],
+      "annotation_symbols": {
+        "+": 1,
+        "N": 1861,
+        "~": 12,
+        "A": 1,
+        "V": 1
+      },
+      "class_counts": {
+        "N": 1861,
+        "S": 1,
+        "V": 1,
+        "F": 0,
+        "Q": 0
+      }
+    },
+    {
+      "record": "122",
+      "subject_group": "122",
+      "sample_rate": 360,
+      "samples": 650000,
+      "lead_names": [
+        "MLII",
+        "V1"
+      ],
+      "selected_lead": "MLII",
+      "units": [
+        "mV",
+        "mV"
+      ],
+      "annotation_symbols": {
+        "+": 1,
+        "N": 2476,
+        "|": 2
+      },
+      "class_counts": {
+        "N": 2476,
+        "S": 0,
+        "V": 0,
+        "F": 0,
+        "Q": 0
+      }
+    },
+    {
+      "record": "123",
+      "subject_group": "123",
+      "sample_rate": 360,
+      "samples": 650000,
+      "lead_names": [
+        "MLII",
+        "V5"
+      ],
+      "selected_lead": "MLII",
+      "units": [
+        "mV",
+        "mV"
+      ],
+      "annotation_symbols": {
+        "+": 1,
+        "N": 1515,
+        "V": 3
+      },
+      "class_counts": {
+        "N": 1515,
+        "S": 0,
+        "V": 3,
+        "F": 0,
+        "Q": 0
+      }
+    },
+    {
+      "record": "124",
+      "subject_group": "124",
+      "sample_rate": 360,
+      "samples": 650000,
+      "lead_names": [
+        "MLII",
+        "V4"
+      ],
+      "selected_lead": "MLII",
+      "units": [
+        "mV",
+        "mV"
+      ],
+      "annotation_symbols": {
+        "+": 13,
+        "R": 1531,
+        "J": 29,
+        "V": 47,
+        "F": 5,
+        "A": 2,
+        "~": 2,
+        "j": 5
+      },
+      "class_counts": {
+        "N": 1536,
+        "S": 31,
+        "V": 47,
+        "F": 5,
+        "Q": 0
+      }
+    },
+    {
+      "record": "200",
+      "subject_group": "200",
+      "sample_rate": 360,
+      "samples": 650000,
+      "lead_names": [
+        "MLII",
+        "V1"
+      ],
+      "selected_lead": "MLII",
+      "units": [
+        "mV",
+        "mV"
+      ],
+      "annotation_symbols": {
+        "+": 148,
+        "V": 826,
+        "N": 1743,
+        "A": 30,
+        "~": 43,
+        "F": 2
+      },
+      "class_counts": {
+        "N": 1743,
+        "S": 30,
+        "V": 826,
+        "F": 2,
+        "Q": 0
+      }
+    },
+    {
+      "record": "201",
+      "subject_group": "201_202",
+      "sample_rate": 360,
+      "samples": 650000,
+      "lead_names": [
+        "MLII",
+        "V1"
+      ],
+      "selected_lead": "MLII",
+      "units": [
+        "mV",
+        "mV"
+      ],
+      "annotation_symbols": {
+        "+": 35,
+        "N": 1625,
+        "a": 97,
+        "j": 10,
+        "V": 198,
+        "x": 37,
+        "A": 30,
+        "J": 1,
+        "~": 4,
+        "F": 2
+      },
+      "class_counts": {
+        "N": 1635,
+        "S": 128,
+        "V": 198,
+        "F": 2,
+        "Q": 0
+      }
+    },
+    {
+      "record": "202",
+      "subject_group": "201_202",
+      "sample_rate": 360,
+      "samples": 650000,
+      "lead_names": [
+        "MLII",
+        "V1"
+      ],
+      "selected_lead": "MLII",
+      "units": [
+        "mV",
+        "mV"
+      ],
+      "annotation_symbols": {
+        "+": 8,
+        "N": 2061,
+        "V": 19,
+        "A": 36,
+        "|": 2,
+        "a": 19,
+        "F": 1
+      },
+      "class_counts": {
+        "N": 2061,
+        "S": 55,
+        "V": 19,
+        "F": 1,
+        "Q": 0
+      }
+    },
+    {
+      "record": "203",
+      "subject_group": "203",
+      "sample_rate": 360,
+      "samples": 650000,
+      "lead_names": [
+        "MLII",
+        "V1"
+      ],
+      "selected_lead": "MLII",
+      "units": [
+        "mV",
+        "mV"
+      ],
+      "annotation_symbols": {
+        "+": 45,
+        "~": 57,
+        "N": 2529,
+        "V": 444,
+        "a": 2,
+        "|": 26,
+        "Q": 4,
+        "F": 1
+      },
+      "class_counts": {
+        "N": 2529,
+        "S": 2,
+        "V": 444,
+        "F": 1,
+        "Q": 4
+      }
+    },
+    {
+      "record": "205",
+      "subject_group": "205",
+      "sample_rate": 360,
+      "samples": 650000,
+      "lead_names": [
+        "MLII",
+        "V1"
+      ],
+      "selected_lead": "MLII",
+      "units": [
+        "mV",
+        "mV"
+      ],
+      "annotation_symbols": {
+        "+": 13,
+        "N": 2571,
+        "V": 71,
+        "A": 3,
+        "F": 11,
+        "~": 2,
+        "|": 1
+      },
+      "class_counts": {
+        "N": 2571,
+        "S": 3,
+        "V": 71,
+        "F": 11,
+        "Q": 0
+      }
+    },
+    {
+      "record": "207",
+      "subject_group": "207",
+      "sample_rate": 360,
+      "samples": 650000,
+      "lead_names": [
+        "MLII",
+        "V1"
+      ],
+      "selected_lead": "MLII",
+      "units": [
+        "mV",
+        "mV"
+      ],
+      "annotation_symbols": {
+        "+": 24,
+        "R": 86,
+        "V": 105,
+        "L": 1457,
+        "[": 6,
+        "!": 472,
+        "]": 6,
+        "~": 15,
+        "|": 2,
+        "E": 105,
+        "A": 107
+      },
+      "class_counts": {
+        "N": 1543,
+        "S": 107,
+        "V": 210,
+        "F": 0,
+        "Q": 0
+      }
+    },
+    {
+      "record": "208",
+      "subject_group": "208",
+      "sample_rate": 360,
+      "samples": 650000,
+      "lead_names": [
+        "MLII",
+        "V1"
+      ],
+      "selected_lead": "MLII",
+      "units": [
+        "mV",
+        "mV"
+      ],
+      "annotation_symbols": {
+        "+": 53,
+        "F": 373,
+        "V": 992,
+        "N": 1586,
+        "~": 24,
+        "|": 8,
+        "S": 2,
+        "Q": 2
+      },
+      "class_counts": {
+        "N": 1586,
+        "S": 2,
+        "V": 992,
+        "F": 373,
+        "Q": 2
+      }
+    },
+    {
+      "record": "209",
+      "subject_group": "209",
+      "sample_rate": 360,
+      "samples": 650000,
+      "lead_names": [
+        "MLII",
+        "V1"
+      ],
+      "selected_lead": "MLII",
+      "units": [
+        "mV",
+        "mV"
+      ],
+      "annotation_symbols": {
+        "+": 21,
+        "N": 2621,
+        "A": 383,
+        "|": 7,
+        "~": 19,
+        "V": 1
+      },
+      "class_counts": {
+        "N": 2621,
+        "S": 383,
+        "V": 1,
+        "F": 0,
+        "Q": 0
+      }
+    },
+    {
+      "record": "210",
+      "subject_group": "210",
+      "sample_rate": 360,
+      "samples": 650000,
+      "lead_names": [
+        "MLII",
+        "V1"
+      ],
+      "selected_lead": "MLII",
+      "units": [
+        "mV",
+        "mV"
+      ],
+      "annotation_symbols": {
+        "+": 17,
+        "N": 2423,
+        "V": 194,
+        "F": 10,
+        "~": 17,
+        "a": 22,
+        "|": 1,
+        "E": 1
+      },
+      "class_counts": {
+        "N": 2423,
+        "S": 22,
+        "V": 195,
+        "F": 10,
+        "Q": 0
+      }
+    },
+    {
+      "record": "212",
+      "subject_group": "212",
+      "sample_rate": 360,
+      "samples": 650000,
+      "lead_names": [
+        "MLII",
+        "V1"
+      ],
+      "selected_lead": "MLII",
+      "units": [
+        "mV",
+        "mV"
+      ],
+      "annotation_symbols": {
+        "+": 1,
+        "R": 1825,
+        "N": 923,
+        "~": 13,
+        "|": 1
+      },
+      "class_counts": {
+        "N": 2748,
+        "S": 0,
+        "V": 0,
+        "F": 0,
+        "Q": 0
+      }
+    },
+    {
+      "record": "213",
+      "subject_group": "213",
+      "sample_rate": 360,
+      "samples": 650000,
+      "lead_names": [
+        "MLII",
+        "V1"
+      ],
+      "selected_lead": "MLII",
+      "units": [
+        "mV",
+        "mV"
+      ],
+      "annotation_symbols": {
+        "+": 43,
+        "N": 2641,
+        "F": 362,
+        "A": 25,
+        "V": 220,
+        "a": 3
+      },
+      "class_counts": {
+        "N": 2641,
+        "S": 28,
+        "V": 220,
+        "F": 362,
+        "Q": 0
+      }
+    },
+    {
+      "record": "214",
+      "subject_group": "214",
+      "sample_rate": 360,
+      "samples": 650000,
+      "lead_names": [
+        "MLII",
+        "V1"
+      ],
+      "selected_lead": "MLII",
+      "units": [
+        "mV",
+        "mV"
+      ],
+      "annotation_symbols": {
+        "+": 25,
+        "L": 2003,
+        "V": 256,
+        "~": 4,
+        "|": 5,
+        "Q": 2,
+        "\"": 1,
+        "F": 1
+      },
+      "class_counts": {
+        "N": 2003,
+        "S": 0,
+        "V": 256,
+        "F": 1,
+        "Q": 2
+      }
+    },
+    {
+      "record": "215",
+      "subject_group": "215",
+      "sample_rate": 360,
+      "samples": 650000,
+      "lead_names": [
+        "MLII",
+        "V1"
+      ],
+      "selected_lead": "MLII",
+      "units": [
+        "mV",
+        "mV"
+      ],
+      "annotation_symbols": {
+        "+": 5,
+        "N": 3195,
+        "V": 164,
+        "~": 30,
+        "A": 3,
+        "\"": 2,
+        "F": 1
+      },
+      "class_counts": {
+        "N": 3195,
+        "S": 3,
+        "V": 164,
+        "F": 1,
+        "Q": 0
+      }
+    },
+    {
+      "record": "217",
+      "subject_group": "217",
+      "sample_rate": 360,
+      "samples": 650000,
+      "lead_names": [
+        "MLII",
+        "V1"
+      ],
+      "selected_lead": "MLII",
+      "units": [
+        "mV",
+        "mV"
+      ],
+      "annotation_symbols": {
+        "+": 67,
+        "/": 1542,
+        "f": 260,
+        "V": 162,
+        "N": 244,
+        "~": 4,
+        "|": 1
+      },
+      "class_counts": {
+        "N": 244,
+        "S": 0,
+        "V": 162,
+        "F": 0,
+        "Q": 1802
+      }
+    },
+    {
+      "record": "219",
+      "subject_group": "219",
+      "sample_rate": 360,
+      "samples": 650000,
+      "lead_names": [
+        "MLII",
+        "V1"
+      ],
+      "selected_lead": "MLII",
+      "units": [
+        "mV",
+        "mV"
+      ],
+      "annotation_symbols": {
+        "+": 21,
+        "N": 2082,
+        "V": 64,
+        "F": 1,
+        "\"": 4,
+        "A": 7,
+        "x": 133
+      },
+      "class_counts": {
+        "N": 2082,
+        "S": 7,
+        "V": 64,
+        "F": 1,
+        "Q": 0
+      }
+    },
+    {
+      "record": "220",
+      "subject_group": "220",
+      "sample_rate": 360,
+      "samples": 650000,
+      "lead_names": [
+        "MLII",
+        "V1"
+      ],
+      "selected_lead": "MLII",
+      "units": [
+        "mV",
+        "mV"
+      ],
+      "annotation_symbols": {
+        "+": 17,
+        "N": 1954,
+        "A": 94,
+        "~": 4
+      },
+      "class_counts": {
+        "N": 1954,
+        "S": 94,
+        "V": 0,
+        "F": 0,
+        "Q": 0
+      }
+    },
+    {
+      "record": "221",
+      "subject_group": "221",
+      "sample_rate": 360,
+      "samples": 650000,
+      "lead_names": [
+        "MLII",
+        "V1"
+      ],
+      "selected_lead": "MLII",
+      "units": [
+        "mV",
+        "mV"
+      ],
+      "annotation_symbols": {
+        "+": 23,
+        "N": 2031,
+        "V": 396,
+        "~": 12
+      },
+      "class_counts": {
+        "N": 2031,
+        "S": 0,
+        "V": 396,
+        "F": 0,
+        "Q": 0
+      }
+    },
+    {
+      "record": "222",
+      "subject_group": "222",
+      "sample_rate": 360,
+      "samples": 650000,
+      "lead_names": [
+        "MLII",
+        "V1"
+      ],
+      "selected_lead": "MLII",
+      "units": [
+        "mV",
+        "mV"
+      ],
+      "annotation_symbols": {
+        "+": 136,
+        "N": 2062,
+        "~": 15,
+        "A": 208,
+        "j": 212,
+        "J": 1
+      },
+      "class_counts": {
+        "N": 2274,
+        "S": 209,
+        "V": 0,
+        "F": 0,
+        "Q": 0
+      }
+    },
+    {
+      "record": "223",
+      "subject_group": "223",
+      "sample_rate": 360,
+      "samples": 650000,
+      "lead_names": [
+        "MLII",
+        "V1"
+      ],
+      "selected_lead": "MLII",
+      "units": [
+        "mV",
+        "mV"
+      ],
+      "annotation_symbols": {
+        "+": 28,
+        "N": 2029,
+        "V": 473,
+        "A": 72,
+        "e": 16,
+        "F": 14,
+        "~": 10,
+        "a": 1
+      },
+      "class_counts": {
+        "N": 2045,
+        "S": 73,
+        "V": 473,
+        "F": 14,
+        "Q": 0
+      }
+    },
+    {
+      "record": "228",
+      "subject_group": "228",
+      "sample_rate": 360,
+      "samples": 650000,
+      "lead_names": [
+        "MLII",
+        "V1"
+      ],
+      "selected_lead": "MLII",
+      "units": [
+        "mV",
+        "mV"
+      ],
+      "annotation_symbols": {
+        "+": 41,
+        "N": 1688,
+        "|": 24,
+        "V": 362,
+        "~": 20,
+        "A": 3,
+        "\"": 3
+      },
+      "class_counts": {
+        "N": 1688,
+        "S": 3,
+        "V": 362,
+        "F": 0,
+        "Q": 0
+      }
+    },
+    {
+      "record": "230",
+      "subject_group": "230",
+      "sample_rate": 360,
+      "samples": 650000,
+      "lead_names": [
+        "MLII",
+        "V1"
+      ],
+      "selected_lead": "MLII",
+      "units": [
+        "mV",
+        "mV"
+      ],
+      "annotation_symbols": {
+        "+": 207,
+        "N": 2255,
+        "~": 2,
+        "|": 1,
+        "V": 1
+      },
+      "class_counts": {
+        "N": 2255,
+        "S": 0,
+        "V": 1,
+        "F": 0,
+        "Q": 0
+      }
+    },
+    {
+      "record": "231",
+      "subject_group": "231",
+      "sample_rate": 360,
+      "samples": 650000,
+      "lead_names": [
+        "MLII",
+        "V1"
+      ],
+      "selected_lead": "MLII",
+      "units": [
+        "mV",
+        "mV"
+      ],
+      "annotation_symbols": {
+        "+": 11,
+        "R": 1254,
+        "\"": 427,
+        "N": 314,
+        "x": 2,
+        "A": 1,
+        "V": 2
+      },
+      "class_counts": {
+        "N": 1568,
+        "S": 1,
+        "V": 2,
+        "F": 0,
+        "Q": 0
+      }
+    },
+    {
+      "record": "232",
+      "subject_group": "232",
+      "sample_rate": 360,
+      "samples": 650000,
+      "lead_names": [
+        "MLII",
+        "V1"
+      ],
+      "selected_lead": "MLII",
+      "units": [
+        "mV",
+        "mV"
+      ],
+      "annotation_symbols": {
+        "+": 1,
+        "R": 397,
+        "A": 1382,
+        "~": 35,
+        "j": 1
+      },
+      "class_counts": {
+        "N": 398,
+        "S": 1382,
+        "V": 0,
+        "F": 0,
+        "Q": 0
+      }
+    },
+    {
+      "record": "233",
+      "subject_group": "233",
+      "sample_rate": 360,
+      "samples": 650000,
+      "lead_names": [
+        "MLII",
+        "V1"
+      ],
+      "selected_lead": "MLII",
+      "units": [
+        "mV",
+        "mV"
+      ],
+      "annotation_symbols": {
+        "+": 71,
+        "V": 831,
+        "N": 2230,
+        "A": 7,
+        "F": 11,
+        "|": 2
+      },
+      "class_counts": {
+        "N": 2230,
+        "S": 7,
+        "V": 831,
+        "F": 11,
+        "Q": 0
+      }
+    },
+    {
+      "record": "234",
+      "subject_group": "234",
+      "sample_rate": 360,
+      "samples": 650000,
+      "lead_names": [
+        "MLII",
+        "V1"
+      ],
+      "selected_lead": "MLII",
+      "units": [
+        "mV",
+        "mV"
+      ],
+      "annotation_symbols": {
+        "+": 3,
+        "N": 2700,
+        "~": 8,
+        "J": 50,
+        "V": 3
+      },
+      "class_counts": {
+        "N": 2700,
+        "S": 50,
+        "V": 3,
+        "F": 0,
+        "Q": 0
+      }
+    }
+  ],
+  "record_count": 48,
+  "subject_count": 47,
+  "class_mapping": {
+    "N": [
+      "N",
+      "L",
+      "R",
+      "e",
+      "j"
+    ],
+    "S": [
+      "A",
+      "a",
+      "J",
+      "S"
+    ],
+    "V": [
+      "V",
+      "E"
+    ],
+    "F": [
+      "F"
+    ],
+    "Q": [
+      "/",
+      "f",
+      "Q"
+    ]
+  },
+  "class_counts": {
+    "N": 90631,
+    "S": 2781,
+    "V": 7236,
+    "F": 803,
+    "Q": 8043
+  },
+  "files_verified": 144,
+  "verified_source_files": [
+    {
+      "file": "100.hea",
+      "sha256": "60ebc904c7bf3e04d142638d3fd5c903e8dc9f10f1ea3264e07926aa089ee75e"
+    },
+    {
+      "file": "100.dat",
+      "sha256": "b2ea3c250e56e48f4b7b90697832b8ecd1afa1e0bb31f2dcfea4ed6e1075a639"
+    },
+    {
+      "file": "100.atr",
+      "sha256": "8d8a5349fb16638ebbf649f1779d12e96d91b736b2aafe59db43719ae583d471"
+    },
+    {
+      "file": "101.hea",
+      "sha256": "d5f02fbe8673fa05465442191b98ca0d28a1670e7ef0e83fb9ef8723113a311c"
+    },
+    {
+      "file": "101.dat",
+      "sha256": "698d1ea6f472d23ca50317c72c96cda2698badd8578220ed0380cdf241e39006"
+    },
+    {
+      "file": "101.atr",
+      "sha256": "441cdd6486cfdf4c53e344d1048ab81296773e7058d53069022adc68543a0663"
+    },
+    {
+      "file": "102.hea",
+      "sha256": "a22f09934ee1cfe339d1502f68eb3f0175815f47273b81ea55f75aeb5584cb0d"
+    },
+    {
+      "file": "102.dat",
+      "sha256": "2b56039f9ece83b53511e0fc24e95f23b90712c8017fe4d915e040e78713c38e"
+    },
+    {
+      "file": "102.atr",
+      "sha256": "24e29031c081806ff6d4ec20fb386e28d8f885f0dca5f74dc29c881e8b196d09"
+    },
+    {
+      "file": "103.hea",
+      "sha256": "3da9706fc27cc5d627a31b04b74b908ac0b6e061843a87cbd57801e5ea0fed7b"
+    },
+    {
+      "file": "103.dat",
+      "sha256": "f7994f0bd196730779998b4bddf26cb47f396599fb370a08b5cb29a3ac4d555d"
+    },
+    {
+      "file": "103.atr",
+      "sha256": "392ce37fbc7e89b3f14998e197a844f23cce6a3db6edaa71b4b49bf3ca5b6596"
+    },
+    {
+      "file": "104.hea",
+      "sha256": "46b5d09e2cae7caaf48f61fc7d0f20962035cf057cf675097fc7d64c4796748f"
+    },
+    {
+      "file": "104.dat",
+      "sha256": "aeb19bd805996167c6edd8f1b1a659486c0cbad101f06f1426548784d9634354"
+    },
+    {
+      "file": "104.atr",
+      "sha256": "4f945bef6a4e30b588d7ebdb0763f5294322aa5632b4bb128ee140c7035463c9"
+    },
+    {
+      "file": "105.hea",
+      "sha256": "9a024eebf8e9baf630308815e689d7e3eab471ab0069db6aded127c396418d48"
+    },
+    {
+      "file": "105.dat",
+      "sha256": "fcd0153dfea69c749194bb73de7db124588857cfa2f6aecb72754894c8afde02"
+    },
+    {
+      "file": "105.atr",
+      "sha256": "278d534c1ad952a6d41db963b6b2b00be070d8dd5fa66545caa5c18edcc36497"
+    },
+    {
+      "file": "106.hea",
+      "sha256": "ad5ed3ee5603926a07a09f0d0c9e2a7ff10a705dbafcde3d185317730a8839ab"
+    },
+    {
+      "file": "106.dat",
+      "sha256": "c017bc18b95b1f970bca143a044ee5d54168648b541e47aa656f2737a59c1202"
+    },
+    {
+      "file": "106.atr",
+      "sha256": "585347e6d1bd3ad89cdb52cb80945878a5e51026d81f871a376bb6e13936f7fa"
+    },
+    {
+      "file": "107.hea",
+      "sha256": "7c9c70b4ccfd3e503b6d4d20eeb508aa89cfd3a5d2b530bc873aba6a2a503dd4"
+    },
+    {
+      "file": "107.dat",
+      "sha256": "ea2254006bb0503926bfb7f6ca3ccf0b3e1ae6bfa8f5eb702bab5d8e960af728"
+    },
+    {
+      "file": "107.atr",
+      "sha256": "559453fc0454d2aa2b744224fd301007b8e41585c6b6f239709c8c2cdbe207f4"
+    },
+    {
+      "file": "108.hea",
+      "sha256": "1c461d963db1883589a975daa80b4104eee6cabb2f5cfec3e0d63b78e7a6a405"
+    },
+    {
+      "file": "108.dat",
+      "sha256": "229a4ef62679dc5c6ea781bfbaec2bd784151fc9f9517f4cdecd533a9431eb20"
+    },
+    {
+      "file": "108.atr",
+      "sha256": "ea227008ac3bc4ada87807117909e77ae0643d5a8bc09f32b9096a35f140cbf3"
+    },
+    {
+      "file": "109.hea",
+      "sha256": "3b21402a9a096acb6a2199b25681e40b0dd201494cb023ded514cd9726bb7fad"
+    },
+    {
+      "file": "109.dat",
+      "sha256": "267afd6ced7a1fd5a8bcd21fcc2b83287e37e3ef57f32e8a0fe39a6e021951cd"
+    },
+    {
+      "file": "109.atr",
+      "sha256": "2eef456587bab17263a126063321c040affa29bc4ccfdf2a2bc7fe50709fa1b8"
+    },
+    {
+      "file": "111.hea",
+      "sha256": "9e635a715d6cc44a716a7a73c6dd365bd94099f94e63accb2a65c5b25b4b69b5"
+    },
+    {
+      "file": "111.dat",
+      "sha256": "8372d98ae59fbfd023502a9d0fc03fb5383083da92584b964484e18593e08485"
+    },
+    {
+      "file": "111.atr",
+      "sha256": "372ed78bb0bbe7d5d9dc7e676c03d72530729775b5cfa94501485329fc47b8cb"
+    },
+    {
+      "file": "112.hea",
+      "sha256": "a78dc4b0907b3db806395cff76b3a2e9a70e889b9dc3702c7de55aa8b41abd7d"
+    },
+    {
+      "file": "112.dat",
+      "sha256": "3c7af9758687314255b5d946a58d9509d53ecf2a300230684fa8ecf00b774bdb"
+    },
+    {
+      "file": "112.atr",
+      "sha256": "69cf7ee24d65a5430162ae9b6452be9d4855c2af47f91976b7f02038ea115002"
+    },
+    {
+      "file": "113.hea",
+      "sha256": "848ed5243adaf3b53c72b36b1a5a8b5b8cf585a1d78a02e7b25c1d38818d4343"
+    },
+    {
+      "file": "113.dat",
+      "sha256": "f5509b71dabaaa11c53f687ee17aab0071bce3d471e2ab77c71a6434f5b7aacf"
+    },
+    {
+      "file": "113.atr",
+      "sha256": "39527d597a246410d2c16f062600c73271a73a7503d49cafd1d17508af4cd432"
+    },
+    {
+      "file": "114.hea",
+      "sha256": "830ba89cebf60945db0c78332e3cc6c64acbe218f6f16594660d4f17423ee889"
+    },
+    {
+      "file": "114.dat",
+      "sha256": "2ae83463edcfec256b79ce93716dcb40f289bacbe9e5e7a66cd00d0a31099d4b"
+    },
+    {
+      "file": "114.atr",
+      "sha256": "5280acb082b654d64944137987a00fbc2105b3a3fcdda75d0bf11d4644e40d9f"
+    },
+    {
+      "file": "115.hea",
+      "sha256": "3212847a692bf3bc5e1dde0343d272e7d56735983276031420060d51d0cdd41c"
+    },
+    {
+      "file": "115.dat",
+      "sha256": "34185efe9889608c76ebfbf5a467d3457970c6d11b77a2bf81b94bcf46e07c41"
+    },
+    {
+      "file": "115.atr",
+      "sha256": "4980667b19b7a637729d40762f071b483d69f5431db818cbddc9a8ae64cc4da2"
+    },
+    {
+      "file": "116.hea",
+      "sha256": "5553273cafa68c106468ddfaa3bd1d6a30daec53cff1642d3592a20110b2edad"
+    },
+    {
+      "file": "116.dat",
+      "sha256": "0ab38cfca76d816673213dcd570504bb3ab02ef76d51540fd7a6075bc580ad85"
+    },
+    {
+      "file": "116.atr",
+      "sha256": "abd31e2c878073e67319d5a6fa34923fe117cca02e5c80318378405c853ccbef"
+    },
+    {
+      "file": "117.hea",
+      "sha256": "452e70b5eb3fe3ebc3fc61284f70b788dbf83bb98f951c2b0bb5f0b95156d06a"
+    },
+    {
+      "file": "117.dat",
+      "sha256": "2ce7de6f20baf4cfef0369f9a13fa53784d18e2da78c11afa1e4c55e8ad1900e"
+    },
+    {
+      "file": "117.atr",
+      "sha256": "232beaacf4a4eb4b6d2f2242f01ecae3d2842be1dd0afe890037ae050f91ce63"
+    },
+    {
+      "file": "118.hea",
+      "sha256": "48a3d0c4e7742ca0e39a2cbb3ea5142a4d41261adbd0bb25651e0fcd9c6aef2b"
+    },
+    {
+      "file": "118.dat",
+      "sha256": "66ea4b70b7d64abd0f49089ae1b8f0f577664c46e5b29ac23b291934e063df15"
+    },
+    {
+      "file": "118.atr",
+      "sha256": "77afd5400648d128223d5029a49c442f5abd65ba997f732489cb8eed39d71551"
+    },
+    {
+      "file": "119.hea",
+      "sha256": "658f01382d7280a06e2f4c06363569d477394a6898c69ee788bb383f6092df63"
+    },
+    {
+      "file": "119.dat",
+      "sha256": "02a286a28e69b441568add915f16a2856b22bab893bf8729ee9654411ed3a5aa"
+    },
+    {
+      "file": "119.atr",
+      "sha256": "fd919c8ea20eed4a22fb37984977f30ce48d382eefd2d90934bf947a88e0fd7b"
+    },
+    {
+      "file": "121.hea",
+      "sha256": "1838d38ff54fed9b831207761d7321682dad0b693f944e4c3a4e6388c46ca6ff"
+    },
+    {
+      "file": "121.dat",
+      "sha256": "679f374a7b2557fed04a4bc5648301ce9bdd38e5a4f13b2e63ebbcf7cb3fb482"
+    },
+    {
+      "file": "121.atr",
+      "sha256": "dbda472aa08eeb6bbbf775b8123e466a7ee57638caecd156407de3141c9fa71c"
+    },
+    {
+      "file": "122.hea",
+      "sha256": "b43ca64ed2c6e69d15def2c30f8cb2cbf25cb807f9530b1e7d5cfed2fd496f70"
+    },
+    {
+      "file": "122.dat",
+      "sha256": "a700c794bfe23565603d75dc5706915f5436e522802d260e758683d11f5b9e13"
+    },
+    {
+      "file": "122.atr",
+      "sha256": "34966d92a94c72126253c0297407cff78e53be1f72c6814e28676bcda8be90de"
+    },
+    {
+      "file": "123.hea",
+      "sha256": "aab5351e9da6f4beb22392f1a469df4a9e4b8017fea820432cf7d1846244d094"
+    },
+    {
+      "file": "123.dat",
+      "sha256": "8a685a846b82d72aac4dd86171ad0fe5b19c0bd9ce51ddc1e6f015f73b2d8c3a"
+    },
+    {
+      "file": "123.atr",
+      "sha256": "061bfd2590fd9d6040d32741a19697491dedb65cbbc5b3865a5c50d49f52d709"
+    },
+    {
+      "file": "124.hea",
+      "sha256": "2200f917fe7a1fa817b79069a274d3291a6fa66289521af5e7d38edeb3e82bce"
+    },
+    {
+      "file": "124.dat",
+      "sha256": "296988e49d2653eb499ad0b17c46826b4296b7eaf94df3f76f1ba2dcdf6bc48b"
+    },
+    {
+      "file": "124.atr",
+      "sha256": "f9c8cac368f1f6ba8895ae47f5771c82597374c1e6b030385ca2eb186454677c"
+    },
+    {
+      "file": "200.hea",
+      "sha256": "9e0c2ff5b790cf624deab0ccb8a9f211a9e29a748d8197da3c1ee7c5b596b40c"
+    },
+    {
+      "file": "200.dat",
+      "sha256": "a9e203b3807b9fcd3647cde03444437cb8eec7f5128a8eb413edafb394272e0f"
+    },
+    {
+      "file": "200.atr",
+      "sha256": "f9624a11696760427d75314a78c31f89ca3c446af855890c8f8b66cddd8b3a3f"
+    },
+    {
+      "file": "201.hea",
+      "sha256": "dba34d6252879af28c1d10cde200989a4f6507d98df4395f5cba5f81af5b7e5a"
+    },
+    {
+      "file": "201.dat",
+      "sha256": "16610ae46eff900794597503d15af4572a8b1518f18dbed2843b7e68c81f3898"
+    },
+    {
+      "file": "201.atr",
+      "sha256": "df1276b6c6952b177ec6eea2be3edc7a96888454107a3ee56be880b0afaf6f35"
+    },
+    {
+      "file": "202.hea",
+      "sha256": "6822216d1bc51f7014637c53e543cdc3863fea4ee3fec3aa99fb0762aece0cba"
+    },
+    {
+      "file": "202.dat",
+      "sha256": "0c990e4142de6be898de4b21bd6e6705cd567e5d97cb731a994dc5aee9c7142d"
+    },
+    {
+      "file": "202.atr",
+      "sha256": "16d59e44564844c39a648164580a69e71f1657e951e6ad121b64eb1a11db037d"
+    },
+    {
+      "file": "203.hea",
+      "sha256": "25b3a3107dd00221b245ef5c23ffdfbd07caaf58e2cf377734f3a947361b26a5"
+    },
+    {
+      "file": "203.dat",
+      "sha256": "5ba7d2237fc838438efd8bb0a3baeffc5de2e70c76e3ab7e401e811ad82f43e0"
+    },
+    {
+      "file": "203.atr",
+      "sha256": "2573f948e54a538983a44bf946e3e61cdda60e898b4c65ca8559b57c4877c706"
+    },
+    {
+      "file": "205.hea",
+      "sha256": "739f76bbcbbfdad1f260a043a5f7106f6e912894065b15ea75bee42af0380a2a"
+    },
+    {
+      "file": "205.dat",
+      "sha256": "8a513c39e6d9a1d732de0b3909a87aa1fcfd4bd55ab5f59a5b810967d252af36"
+    },
+    {
+      "file": "205.atr",
+      "sha256": "0ae55e31175b9ba36e09c3b556b15e3e70f254936a2634d5ff341dfb86a74ea9"
+    },
+    {
+      "file": "207.hea",
+      "sha256": "7645d488d4c304760aae0a709193ffa13692c317b551bcbdcbb37011032178d8"
+    },
+    {
+      "file": "207.dat",
+      "sha256": "139f99250366fbf347cba4d8ea1fbe788f98cb1b93b70f50ccba70122d908605"
+    },
+    {
+      "file": "207.atr",
+      "sha256": "cceb64d68033a277d2d5669458d49258295102dd3e20614a0ca7d63b67009404"
+    },
+    {
+      "file": "208.hea",
+      "sha256": "5a27efda1bea972440a0b5f40a1c322898693e9602d5ce4722fe750b7dea46e9"
+    },
+    {
+      "file": "208.dat",
+      "sha256": "22873623623c44ee413a5b60cacb15d4af2723734836fb3ae45d9ff96bdb36e7"
+    },
+    {
+      "file": "208.atr",
+      "sha256": "33878519ee34d00cb233fdb15b11c2b8da0b0aea2e643d31b07105cc3392edf4"
+    },
+    {
+      "file": "209.hea",
+      "sha256": "9ac1abedc17f898bf6a1db9c64c38ccf4f065ebc3989ee7740f4c0796655e590"
+    },
+    {
+      "file": "209.dat",
+      "sha256": "e2516dd126ea85529d9a0e8442fef5d880a492d41f0692a76e648c8437f15c5f"
+    },
+    {
+      "file": "209.atr",
+      "sha256": "c0697b176e7caf49e34f93e28eaeeff7167e2de380a8698f6cb3fb3a5fcb1c84"
+    },
+    {
+      "file": "210.hea",
+      "sha256": "9d6a422834435fb8d267256f4fd01bfd8158b511f662c4b5dd8c60059944a322"
+    },
+    {
+      "file": "210.dat",
+      "sha256": "76e971fba03c0ae2ab261c7446240987ecde82f45dad1d4f36e290b950eb464b"
+    },
+    {
+      "file": "210.atr",
+      "sha256": "5a46bef3d185c903b1ce099a988898fc829cea7e6c5bc1984532efd694fa8db6"
+    },
+    {
+      "file": "212.hea",
+      "sha256": "f67d7c99a8ba055941e8aa98fd1f31dfd7dd1d957c85f40b488237eecba61aad"
+    },
+    {
+      "file": "212.dat",
+      "sha256": "6b63d3e20c40073be852e8121196d5de2ede502168fcb6c10ca5af841418cc5c"
+    },
+    {
+      "file": "212.atr",
+      "sha256": "dc4d0bec7e3ced82f67ef9d5264bcdb3d167c2214125eb04891040fbbb340816"
+    },
+    {
+      "file": "213.hea",
+      "sha256": "6b64b05c7a28630acf3ffb5e541d635e3fc854ea3602b1b355762f94c6058f17"
+    },
+    {
+      "file": "213.dat",
+      "sha256": "0cb13cd9299b0ab68f8f3064b2ab72f853d155abb277b68daef0a26cbc173b0d"
+    },
+    {
+      "file": "213.atr",
+      "sha256": "44349e22176aad3f688ca9a62f283a993927a0b9ef6d97f473cde3b16cfabc9a"
+    },
+    {
+      "file": "214.hea",
+      "sha256": "beb6b379e93cbe94eb9f1461cccaa0131940e14322df4abbc07665b722ed9206"
+    },
+    {
+      "file": "214.dat",
+      "sha256": "a886b1ceb56e950858dedf5b56d3fdb5f26aef3667f8effcb880c1c000ee0cd3"
+    },
+    {
+      "file": "214.atr",
+      "sha256": "09c588b0623f6dc6138928ce2006f294c4ef3da143eec2cdba6eddb9b1597214"
+    },
+    {
+      "file": "215.hea",
+      "sha256": "a326c25698a0773a6be986f2cae499981224d3c61d8fdcddfbb3beaf3ff0bcbd"
+    },
+    {
+      "file": "215.dat",
+      "sha256": "9e28799b5733a2d60470653e6f6ca26610143303233a1b7559cff54e2ad26ef9"
+    },
+    {
+      "file": "215.atr",
+      "sha256": "94968307b89eb0be766cbb88617f08571ed41b3b25b294d19a72b7ffd2525aee"
+    },
+    {
+      "file": "217.hea",
+      "sha256": "5320a16d3a7d1dea32cdf905b7f5140772a01bf6b11065e0ab937cc6775c5ce6"
+    },
+    {
+      "file": "217.dat",
+      "sha256": "de29975a2a476eaa1a3f07b90134cec70830b2d7932b213354ba175914a6040a"
+    },
+    {
+      "file": "217.atr",
+      "sha256": "196ad0989b837b5d51784e13bef1242549ca7266f0da21743f208302e3e3f5e1"
+    },
+    {
+      "file": "219.hea",
+      "sha256": "d14f0ffbf19f9842dbaa15f82bcedbc7b9b96f00f422b7e4da31112a1d1b2b67"
+    },
+    {
+      "file": "219.dat",
+      "sha256": "7fc27b77e313aaa40da9f39783f8fb29a6a910be148e67463e5093793644751a"
+    },
+    {
+      "file": "219.atr",
+      "sha256": "271928544ce78772669c50b26cf4de163a53f5b90187b5d8080928def79f0e6a"
+    },
+    {
+      "file": "220.hea",
+      "sha256": "af40adc6deb9c0e942432e69a7153e41ac252eb6c15a24a715ef258469cda2e5"
+    },
+    {
+      "file": "220.dat",
+      "sha256": "c01ca1a76fb3a89e96134a08f2e5aa6e760eda59ea9086ba8aaa13ba0cca9cff"
+    },
+    {
+      "file": "220.atr",
+      "sha256": "9cf9f330823e2a9850d51a7fce1f8ecfe5bb84e80e89412bd9f4de6a67f9ccc7"
+    },
+    {
+      "file": "221.hea",
+      "sha256": "09afd18974ee6e0cfa8b5b6ce80112c4df0cfbb8c8d01d3d085ecdf7790ada7b"
+    },
+    {
+      "file": "221.dat",
+      "sha256": "274d17c6a35f7adcbb10a59ea34350e5ad299c2d69e4fa579d8863213e1fe9ae"
+    },
+    {
+      "file": "221.atr",
+      "sha256": "92549b966cc17bcf2edf00a97237d1e350a761d9ffe20065b5ed303848aad7ae"
+    },
+    {
+      "file": "222.hea",
+      "sha256": "a395bf5e58492e6724616532aae1cca7c50626fd66fe61f843a92adadc27293d"
+    },
+    {
+      "file": "222.dat",
+      "sha256": "0510bf39ed2925a83debd249492bdfe77c575148376aaabeba4c7b7a2451ac5d"
+    },
+    {
+      "file": "222.atr",
+      "sha256": "a0206b778a9f073d451023e802e52059754648e83fe1dc669395b4884ccad356"
+    },
+    {
+      "file": "223.hea",
+      "sha256": "bbd414e57b6eafa53204fb7eeb1212c9d47f598f36e8838b103bfb68a316ca85"
+    },
+    {
+      "file": "223.dat",
+      "sha256": "1d42aa9e13f7349287ae5f0f00b40078c01aadd39e2cad1001ab42d3b7484594"
+    },
+    {
+      "file": "223.atr",
+      "sha256": "beaa5cb3eb5fb64a5f9e1dfcac9297f9564b379c9c354cbf8f9f927d9b81ccf1"
+    },
+    {
+      "file": "228.hea",
+      "sha256": "b4a2796ca39816b32d5b24c2c1d0a2aa355d159aafd7ecbfb1cdf11a695a14d8"
+    },
+    {
+      "file": "228.dat",
+      "sha256": "b2421f15447772bb7a38f5073e4e07d5d9be50d875441a4a0821c9e22b78fdac"
+    },
+    {
+      "file": "228.atr",
+      "sha256": "7e08ee90f668800fb3e1a66193fb8f8b4b91c3ec2f52f384756bab826e019d1d"
+    },
+    {
+      "file": "230.hea",
+      "sha256": "5738bb479316dcc324b27807bbbffd8878da6156707c6cfbc08dcd0fa4771671"
+    },
+    {
+      "file": "230.dat",
+      "sha256": "fba09ea54d9caa342c54c46e0df247335345b02444f7d15162906adfef55d057"
+    },
+    {
+      "file": "230.atr",
+      "sha256": "403d0d4842ba7135b1e14b9e5c50cba214753a0e17bf979090b2c6a8018f7eae"
+    },
+    {
+      "file": "231.hea",
+      "sha256": "733195a792e806a897531475eabcdec71e96f7b6cd7bcf57f9f1b2538cb13503"
+    },
+    {
+      "file": "231.dat",
+      "sha256": "7d4f56d6c4b1d50322154381c1d8761457c2f2696973e915a3c19d8a5b789595"
+    },
+    {
+      "file": "231.atr",
+      "sha256": "b82cc005618eab81b3a246ca5c5a61903f3c0f40c191d7fb953adf054ea691de"
+    },
+    {
+      "file": "232.hea",
+      "sha256": "5ff480450238ffc957abde76687b7e3d728c4b7b19063c8a0b1d08469a2228ea"
+    },
+    {
+      "file": "232.dat",
+      "sha256": "3d74a21f848766c9607bc5eead7e4b2655f09586adb5561f02fd8fcb0e9da6d0"
+    },
+    {
+      "file": "232.atr",
+      "sha256": "be0e236cb883c669128da01beae0ec0efc39fdfaa5c1e878a3cef5443db8c934"
+    },
+    {
+      "file": "233.hea",
+      "sha256": "d5ef73b3b4a98bec6e3d853db08ff18b0a1a9173c95327bcb15b2cfecee99b85"
+    },
+    {
+      "file": "233.dat",
+      "sha256": "6ccd6b1fa0cafc052369e7ec0a99cc6c3b56b3c12afff26db800c55a826211b4"
+    },
+    {
+      "file": "233.atr",
+      "sha256": "c9ce42ecefa9a92e2ec69f9d237d8a53c67c60b31a25d579356ea8910bcc368a"
+    },
+    {
+      "file": "234.hea",
+      "sha256": "91c94c803d05f637cc29a3f353d88e1c25b20a25957c8cc25f7cbbf9fe2627c9"
+    },
+    {
+      "file": "234.dat",
+      "sha256": "89f826307bfc91a554021da87c17b88b843ed3d26aa9ea237fc6f7c8af00da6d"
+    },
+    {
+      "file": "234.atr",
+      "sha256": "e829a3e4131fbe9420c1740bfb5000b3f4f64a2b40aa5f739ed6420f75be6785"
+    }
+  ],
+  "environment": {
+    "torch_version": "2.9.1+cpu",
+    "cuda_available": false,
+    "cuda_devices": 0,
+    "cpu": "AMD64 Family 25 Model 68 Stepping 1, AuthenticAMD",
+    "threads": 8,
+    "numpy_version": "1.26.4",
+    "wfdb_version": "4.3.0"
+  },
+  "q_definition": "paced /, fusion of paced+normal f, unclassifiable Q; not AF or a generic disease diagnosis",
+  "source": "https://physionet.org/content/mitdb/1.0.0/",
+  "license": "ODC Attribution 1.0"
+}

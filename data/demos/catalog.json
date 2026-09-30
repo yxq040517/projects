@@ -1,0 +1,67 @@
+[
+  {
+    "id": "mitbih-100",
+    "name": "公开心电 · MIT-BIH 100",
+    "description": "真实动态心电前 60 秒，MLII / V5；用于波形与检测标记复核。",
+    "source": "MIT-BIH Arrhythmia Database · record 100 · 前60秒 · https://physionet.org/content/mitdb/1.0.0/ · ODC Attribution 1.0",
+    "sample_rate": 360.0,
+    "duration": 60,
+    "lead_names": [
+      "MLII",
+      "V5"
+    ],
+    "kind": "public"
+  },
+  {
+    "id": "mitbih-119",
+    "name": "公开心电 · MIT-BIH 119",
+    "description": "真实动态心电前 60 秒，MLII / V1；可观察形态与 RR 间期变化。",
+    "source": "MIT-BIH Arrhythmia Database · record 119 · 前60秒 · https://physionet.org/content/mitdb/1.0.0/ · ODC Attribution 1.0",
+    "sample_rate": 360.0,
+    "duration": 60,
+    "lead_names": [
+      "MLII",
+      "V1"
+    ],
+    "kind": "public"
+  },
+  {
+    "id": "synthetic-regular",
+    "name": "规则节律 · 合成演示",
+    "description": "72 bpm 的合成信号；用于检查导入、采样率与峰定位，不代表患者。",
+    "source": "PulseLab 数学合成信号 · 非患者数据 · 非临床验证数据",
+    "sample_rate": 250,
+    "duration": 60,
+    "lead_names": [
+      "II",
+      "V1"
+    ],
+    "kind": "synthetic"
+  },
+  {
+    "id": "synthetic-fast",
+    "name": "较快节律 · 合成演示",
+    "description": "120 bpm 的合成信号；用于展示较快心率的规则提示，不代表患者。",
+    "source": "PulseLab 数学合成信号 · 非患者数据 · 非临床验证数据",
+    "sample_rate": 250,
+    "duration": 60,
+    "lead_names": [
+      "II",
+      "V1"
+    ],
+    "kind": "synthetic"
+  },
+  {
+    "id": "synthetic-noisy",
+    "name": "噪声与平坦片段 · 合成演示",
+    "description": "加入基线漂移、工频、随机噪声与平坦片段，观察质量提示。",
+    "source": "PulseLab 数学合成信号 · 非患者数据 · 非临床验证数据",
+    "sample_rate": 250,
+    "duration": 60,
+    "lead_names": [
+      "II",
+      "V1"
+    ],
+    "kind": "synthetic"
+  }
+]

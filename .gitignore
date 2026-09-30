@@ -1,0 +1,21 @@
+.venv/
+.training-venv/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+storage/
+quality/*.png
+quality/*.json
+node_modules/
+training/**/cache/
+
+# Downloadable source datasets and local verification artifacts
+mit-bih-arrhythmia-database/
+mit-bih-arrhythmia-database-*.zip
+data/source/
+quality/
+
+# Local credentials and environment configuration
+.env
+.env.*
+!.env.example
