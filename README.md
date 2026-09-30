@@ -45,9 +45,9 @@ python start.py --port 8766 --no-browser
 ```powershell
 python -m venv .training-venv
 .training-venv\Scripts\python.exe -m pip install -r requirements-training.txt
-.training-venv\Scripts\python.exe scripts/inspect_training.py --help
-.training-venv\Scripts\python.exe scripts/prepare_mitbih_training.py --help
-.training-venv\Scripts\python.exe scripts/train_mitbih.py --help
+.training-venv\Scripts\python.exe -m scripts.inspect_training --help
+.training-venv\Scripts\python.exe -m scripts.prepare_mitbih_training --help
+.training-venv\Scripts\python.exe -m scripts.train_mitbih --help
 ```
 
 ## 开发验证
@@ -57,6 +57,6 @@ python -m venv .training-venv
 .venv\Scripts\python.exe -m pytest -q
 ```
 
-`backend/` 为后端与分析引擎，`web/` 为前端，`scripts/` 为数据与训练工具，`tests/` 为自动化测试。用户导入记录保存在本地 `storage/`，虚拟环境、本地数据库、原始数据缓存和验证报告已通过 `.gitignore` 排除。
+`backend/` 为后端与分析引擎，`web/` 为前端，`scripts/` 为数据与训练工具，`tests/` 为自动化测试。用户导入记录保存在本地 `storage/`，虚拟环境、本地数据库、原始数据缓存、训练运行产物和验证报告已通过 `.gitignore` 排除。
 
 本项目用于科研、教学与信号复核。工程指标和模型输出未经临床验证，不用于诊断、治疗或急救决策。MIT-BIH 数据的许可不等同于本项目代码的许可。

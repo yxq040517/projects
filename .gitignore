@@ -8,6 +8,7 @@ quality/*.png
 quality/*.json
 node_modules/
 training/**/cache/
+training/mitbih_cnn_v*/
 
 # Downloadable source datasets and local verification artifacts
 mit-bih-arrhythmia-database/

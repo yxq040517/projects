@@ -4,18 +4,17 @@ from __future__ import annotations
 
 import argparse
 import json
-import sys
 from pathlib import Path
 from time import perf_counter
 
 import numpy as np
 import wfdb
 
-ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT))
 from backend.ecg import analyze_signal
 from backend.model_runtime import predict, validate_model
 from scripts.training_metrics import classification_metrics
+
+ROOT = Path(__file__).resolve().parents[1]
 
 
 def evaluate(output: Path):
@@ -49,6 +48,8 @@ def evaluate(output: Path):
     frozen_test_records = {
         record_ids[int(index)] for index in np.unique(record_indices[test_indices])
     }
+    if frozen_test_records != set(split["test"]["record_ids"]):
+        raise ValueError("Cache test records do not match the frozen subject split.")
     for record_id in sorted(frozen_test_records):
         description = inventory_records[record_id]
         source = wfdb.rdrecord(str(data / record_id))

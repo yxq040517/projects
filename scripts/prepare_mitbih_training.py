@@ -13,7 +13,6 @@ import inspect
 import json
 import os
 import shutil
-import sys
 import tempfile
 from collections import Counter
 from datetime import datetime, timezone
@@ -23,11 +22,9 @@ import numpy as np
 import scipy
 import wfdb
 
-ROOT = Path(__file__).resolve().parents[1]
-if str(ROOT) not in sys.path:
-    sys.path.insert(0, str(ROOT))
-
 from backend.ecg import _filter_waveform
+
+ROOT = Path(__file__).resolve().parents[1]
 
 CLASSES = ["N", "S", "V", "F", "Q"]
 MAPPING = {
@@ -266,7 +263,9 @@ def choose_split(records: list[dict], seed: int, fingerprint: str) -> dict:
         ]
     totals = counts.sum(axis=0)
     if np.any(totals == 0):
-        raise ValueError(f"No valid support for all classes: {dict(zip(CLASSES, totals.tolist()))}")
+        raise ValueError(
+            f"No valid support for all classes: {dict(zip(CLASSES, totals.tolist(), strict=True))}"
+        )
     minimum = np.array(
         [
             [SPLIT_POLICY["minimum_class_counts"][part][name] for name in CLASSES]
@@ -309,7 +308,7 @@ def choose_split(records: list[dict], seed: int, fingerprint: str) -> dict:
             "No feasible split among exactly 15000 seeded permutations; constraints were NOT relaxed. "
             + json.dumps(
                 {
-                    "global_class_counts": dict(zip(CLASSES, totals.tolist())),
+                    "global_class_counts": dict(zip(CLASSES, totals.tolist(), strict=True)),
                     "subject_class_counts": actual,
                     "policy": SPLIT_POLICY,
                 },

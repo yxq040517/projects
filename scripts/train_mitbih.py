@@ -14,25 +14,21 @@ import json
 import os
 import platform
 import random
-import sys
 from datetime import datetime, timezone
 from importlib.metadata import PackageNotFoundError, version
 from itertools import islice
 from pathlib import Path
 from time import perf_counter
 
-os.environ.setdefault("CUBLAS_WORKSPACE_CONFIG", ":4096:8")
-
 import numpy as np
 import torch
 from torch import nn
 from torch.utils.data import WeightedRandomSampler
 
-ROOT = Path(__file__).resolve().parents[1]
-if str(ROOT) not in sys.path:
-    sys.path.insert(0, str(ROOT))
 from backend.model_runtime import _normalize, validate_model
 from scripts.training_metrics import classification_metrics
+
+ROOT = Path(__file__).resolve().parents[1]
 
 CLASSES = ["N", "S", "V", "F", "Q"]
 CLASS_SYMBOLS = {
@@ -582,6 +578,7 @@ def positive_integer(value: str) -> int:
 
 
 def main() -> None:
+    os.environ.setdefault("CUBLAS_WORKSPACE_CONFIG", ":4096:8")
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
         "--output",
